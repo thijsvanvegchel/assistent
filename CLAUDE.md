@@ -1,21 +1,11 @@
 # Context voor Claude
 
-Deze repository ondersteunt **Marieke Swinkels** (GZ-psycholoog) bij haar opleiding tot psychotherapeut, die start in **januari 2027**. Thijs (partner) en Marieke beheren dit samen.
+Deze repository bevat de website van de praktijk van **Marieke Swinkels**, in de map `opzet website/`. Thijs (partner) en Marieke beheren dit samen. De site wordt de komende jaren bijgeschaafd, tot Marieke klaar is met haar opleiding tot psychotherapeut.
 
-## Waar Claude mee helpt
-- Opleidingsplan en roadmap (eisen, uren, deadlines, voortgang)
-- Planning die werkplek, opleiding en privé samenbrengt
-- Overzicht van contracten en afspraken
-- Aantekeningen, samenvattingen en inhoudelijke voorbereiding
-- De website van de eigen praktijk (map `opzet website/`)
+De ondersteuning bij de opleiding staat apart, in de privé repository `thijsvanvegchel/opleiding-PT`. Zet opleidingszaken nooit hier neer.
 
 ## Werkafspraken
-- Schrijf in het Nederlands, kort en praktisch.
-- Nieuwe of losse input komt in `inbox/`. Claude sorteert die naar de juiste map en vermeldt in `logboek/` wat er veranderd is.
-- Data altijd als JJJJ-MM-DD, bijvoorbeeld in bestandsnamen: `2027-01-15-supervisie.md`.
-- Als iets onduidelijk is: vraag het, en gok niet bij eisen van de opleiding of contracten.
-
-## Privacy: harde regel
-- **Nooit** cliëntgegevens in deze repository: geen namen, initialen, geboortedata, casusbeschrijvingen die herleidbaar zijn, of verslagen.
-- Contracten en salarisgegevens alleen als de repository **privé** is.
-- Casuïstiek uitsluitend volledig geanonimiseerd en algemeen.
+- Schrijf in het Nederlands. Teksten op de site zijn warm en persoonlijk, met 'je' als aanspreekvorm.
+- Ontwerpkeuzes staan in `opzet website/docs/ontwerpkeuzes.md`. Houd je daaraan, of werk ze bij.
+- **Titels:** Marieke is GZ-psycholoog. Noem haar pas psychotherapeut als ze als zodanig in het BIG-register staat. Tot dan: "in opleiding tot psychotherapeut".
+- Geen cliëntgegevens of echte cliëntcitaten zonder toestemming.
