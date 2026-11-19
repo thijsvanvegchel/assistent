@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Logo Marieke Swinkels">
+  <!-- Twee cirkels die elkaar overlappen: verbinding tussen twee mensen.
+       Gebruikt currentColor, dus de kleur volgt de CSS 'color' (zoals Ger Schurink zijn logo in verschillende kleuren inzet). -->
+  <circle cx="25" cy="32" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+  <circle cx="39" cy="32" r="16" fill="none" stroke="currentColor" stroke-width="3"/>
+  <path d="M32 17.6A16 16 0 0 1 32 46.4A16 16 0 0 1 32 17.6z" fill="currentColor" opacity=".35"/>
+</svg>

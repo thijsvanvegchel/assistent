@@ -1,0 +1,228 @@
+/* ==========================================================
+   Praktijk Marieke Swinkels — basisstijl
+   Licht, helder, persoonlijk. Geen taupe, geen 'magazine-look'.
+   Pas kleuren aan in :root — de rest volgt automatisch.
+   ========================================================== */
+
+:root {
+  /* Kleuren */
+  --inkt:        #1d3b45;   /* diep blauwgroen: tekst & logo */
+  --inkt-zacht:  #46616a;   /* secundaire tekst */
+  --accent:      #2f7a78;   /* zeegroen: links, knoppen */
+  --accent-warm: #d98e5f;   /* zacht terracotta: kleine accenten */
+  --mist:        #eef4f3;   /* lichte achtergrondvlakken */
+  --zand:        #fbf8f3;   /* warme, bijna-witte basis */
+  --wit:         #ffffff;
+  --lijn:        #d7e3e1;
+
+  /* Typografie (systeemfonts; zie README om een webfont lokaal te hosten) */
+  --font-kop:  "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-tekst: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --max: 72rem;
+  --tekstbreedte: 40rem;
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-tekst);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--inkt);
+  background: var(--zand);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); text-underline-offset: .2em; }
+a:hover { color: var(--inkt); }
+
+h1, h2, h3 {
+  font-family: var(--font-kop);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 .6em;
+}
+h1 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.3rem; }
+
+p { margin: 0 0 1.1em; }
+
+.container { width: min(100% - 2.5rem, var(--max)); margin-inline: auto; }
+.smal      { max-width: var(--tekstbreedte); }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0;
+  background: var(--inkt); color: var(--wit); padding: .5rem 1rem;
+}
+.skip-link:focus { left: 1rem; z-index: 100; }
+
+:focus-visible { outline: 3px solid var(--accent-warm); outline-offset: 3px; }
+
+/* ---------- Header & navigatie ---------- */
+.site-header {
+  background: var(--wit);
+  border-bottom: 1px solid var(--lijn);
+  position: sticky; top: 0; z-index: 50;
+}
+.site-header .container {
+  display: flex; align-items: center; justify-content: space-between;
+  min-height: 4.75rem; gap: 1rem;
+}
+
+.logo {
+  display: flex; align-items: center; gap: .75rem;
+  text-decoration: none; color: var(--inkt);
+}
+.logo svg { width: 2.6rem; height: 2.6rem; flex: none; }
+.logo-tekst { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-naam { font-family: var(--font-kop); font-size: 1.25rem; }
+.logo-sub  { font-size: .78rem; color: var(--inkt-zacht); letter-spacing: .02em; }
+
+.nav-toggle {
+  display: none;
+  background: none; border: 1px solid var(--lijn); border-radius: 999px;
+  padding: .45rem .9rem; font: inherit; font-size: .95rem; color: var(--inkt); cursor: pointer;
+}
+
+.hoofdmenu ul { list-style: none; margin: 0; padding: 0; display: flex; gap: .25rem; }
+.hoofdmenu a {
+  display: block; padding: .5rem .8rem; border-radius: 999px;
+  text-decoration: none; color: var(--inkt); font-size: .97rem;
+}
+.hoofdmenu a:hover { background: var(--mist); }
+.hoofdmenu a[aria-current="page"] { background: var(--mist); color: var(--accent); }
+.hoofdmenu .knop-menu { background: var(--accent); color: var(--wit); }
+.hoofdmenu .knop-menu:hover { background: var(--inkt); color: var(--wit); }
+
+@media (max-width: 860px) {
+  .nav-toggle { display: inline-block; }
+  .hoofdmenu {
+    display: none;
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: var(--wit); border-bottom: 1px solid var(--lijn);
+  }
+  .hoofdmenu.open { display: block; }
+  .hoofdmenu ul { flex-direction: column; padding: .75rem 1.25rem 1.25rem; }
+}
+
+/* ---------- Knoppen ---------- */
+.knop {
+  display: inline-block; padding: .8rem 1.4rem; border-radius: 999px;
+  background: var(--accent); color: var(--wit); text-decoration: none; font-weight: 500;
+  transition: background .2s;
+}
+.knop:hover { background: var(--inkt); color: var(--wit); }
+.knop-licht { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.knop-licht:hover { background: var(--accent); color: var(--wit); }
+.knoppen { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+
+/* ---------- Secties ---------- */
+section { padding: clamp(3rem, 7vw, 5.5rem) 0; }
+.vlak-mist { background: var(--mist); }
+.vlak-wit  { background: var(--wit); }
+
+.label {
+  display: inline-block; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: .8rem; font-weight: 600;
+}
+
+/* Hero */
+.hero .container {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(2rem, 5vw, 4rem); align-items: center;
+}
+.hero p.intro { font-size: 1.2rem; color: var(--inkt-zacht); max-width: 34rem; }
+@media (max-width: 860px) { .hero .container { grid-template-columns: 1fr; } }
+
+/* Foto-plaatshouders: vervang door <img> zodra er foto's zijn */
+.foto {
+  border-radius: var(--radius); overflow: hidden; background: var(--mist);
+  aspect-ratio: 4 / 5; position: relative;
+}
+.foto img { width: 100%; height: 100%; object-fit: cover; }
+.foto.breed { aspect-ratio: 16 / 7; }
+.foto-placeholder {
+  position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+  padding: 1.5rem; color: var(--inkt-zacht); font-size: .95rem;
+  background:
+    radial-gradient(circle at 30% 35%, rgba(47,122,120,.18) 0 30%, transparent 31%),
+    radial-gradient(circle at 62% 60%, rgba(217,142,95,.18) 0 30%, transparent 31%),
+    var(--mist);
+}
+
+/* Twee kolommen: foto + tekst (Over mij) */
+.duo { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+@media (max-width: 860px) { .duo { grid-template-columns: 1fr; } }
+
+/* Kaarten (behandelvormen / aanbod) */
+.kaarten { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.kaart {
+  background: var(--wit); border: 1px solid var(--lijn); border-radius: var(--radius);
+  padding: 1.6rem; display: flex; flex-direction: column;
+}
+.kaart h3 { margin-bottom: .4em; }
+.kaart p { color: var(--inkt-zacht); flex: 1; }
+.kaart a.meer { font-weight: 500; text-decoration: none; }
+.kaart a.meer::after { content: " →"; }
+.kaart .stip { width: 2.2rem; height: 2.2rem; margin-bottom: 1rem; color: var(--accent); }
+
+/* Citaat */
+.citaat {
+  font-family: var(--font-kop); font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.45;
+  max-width: 44rem; margin: 0 auto; text-align: center; font-style: italic;
+}
+.citaat cite { display: block; margin-top: 1rem; font-family: var(--font-tekst); font-style: normal; font-size: .95rem; color: var(--inkt-zacht); }
+
+/* Pagina-kop voor subpagina's */
+.paginakop { padding: clamp(2.5rem, 6vw, 4rem) 0 1.5rem; }
+.paginakop p { font-size: 1.15rem; color: var(--inkt-zacht); max-width: 38rem; }
+
+/* Inhoudspagina met zijmenu (zoals Budde: makkelijk navigeren binnen een onderwerp) */
+.inhoud-grid { display: grid; grid-template-columns: 14rem 1fr; gap: clamp(2rem, 5vw, 4rem); }
+.zijmenu { position: sticky; top: 6.5rem; align-self: start; font-size: .95rem; }
+.zijmenu p { font-weight: 600; margin-bottom: .5rem; }
+.zijmenu ul { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--lijn); }
+.zijmenu a { display: block; padding: .3rem 0 .3rem 1rem; text-decoration: none; color: var(--inkt-zacht); }
+.zijmenu a:hover { color: var(--accent); }
+.artikel h2 { margin-top: 2.2rem; scroll-margin-top: 6.5rem; }
+.artikel h2:first-child { margin-top: 0; }
+@media (max-width: 860px) { .inhoud-grid { grid-template-columns: 1fr; } .zijmenu { position: static; } }
+
+/* Info-tabel (tarieven e.d.) */
+.info-tabel { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+.info-tabel th, .info-tabel td { text-align: left; padding: .7rem .5rem; border-bottom: 1px solid var(--lijn); vertical-align: top; }
+.info-tabel th { font-weight: 600; width: 45%; }
+
+.melding {
+  background: var(--mist); border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem; border-radius: 0 var(--radius) var(--radius) 0; margin: 1.5rem 0;
+}
+
+/* Formulier */
+.formulier { display: grid; gap: 1rem; max-width: 34rem; }
+.formulier label { font-weight: 500; display: block; margin-bottom: .3rem; }
+.formulier input, .formulier textarea {
+  width: 100%; padding: .75rem .9rem; border: 1px solid var(--lijn); border-radius: 10px;
+  font: inherit; background: var(--wit); color: var(--inkt);
+}
+.formulier textarea { min-height: 9rem; resize: vertical; }
+.formulier .klein { font-size: .88rem; color: var(--inkt-zacht); }
+
+/* Footer */
+.site-footer { background: var(--inkt); color: #d9e6e4; padding: 3.5rem 0 2rem; font-size: .95rem; }
+.site-footer a { color: var(--wit); }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2rem; }
+.site-footer h3 { font-size: 1.05rem; color: var(--wit); }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: .3rem; }
+.site-footer .logo { color: var(--wit); margin-bottom: 1rem; }
+.site-footer .logo-sub { color: #b6cbc8; }
+.footer-onder { border-top: 1px solid rgba(255,255,255,.15); margin-top: 2.5rem; padding-top: 1.25rem; font-size: .85rem; color: #b6cbc8; }
